@@ -51,7 +51,7 @@ a:hover {
 .main-header .logo .logo-image{
     height: 50px; /* Adjust as needed */
     width: auto;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -740,6 +740,16 @@ a:hover {
     }
     .social-media {
         justify-content: center;
+    }
+
+    .hero-section {
+        height: 850px;
+        display: block;
+    }
+    .hero-section > .hero-image {
+         position: relative;
+         top: 50px;
+         width: 100%;   
     }
 }
 /* show product details to pay */
