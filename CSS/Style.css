@@ -230,7 +230,7 @@ a:hover {
 
 
 /* Media Query for Mobile View */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .main-header {
         padding: 15px 25px;
     }
@@ -306,7 +306,200 @@ a:hover {
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
     .drop > .cart {
-        display: none; /* Hide the cart inside the vertical menu flow */
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 470px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+@media (max-width: 992px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 550px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 210px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+@media (max-width: 834px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 550px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 375px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -317,6 +510,846 @@ a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 550px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 341px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 710px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -25px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 628px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -65px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 585px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -90px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 510px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -128px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 475px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -145px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 428px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 550px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 320px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 390px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        right: 350px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
+
+@media (max-width: 375px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 400px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    .drop li:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content {
+        position: static; /* Stack naturally below the main link */
+        min-width: 100%;
+        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .dropdown-content a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .dropdown-content a:hover {
+        border-left: none; /* Remove left border decoration on mobile */
+        padding-left: 20px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: -300px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+}
 /* Re-add a separate cart for mobile in the HTML and style it here: */
 /* I recommend placing a new cart button right next to the menu-toggle for mobile */
 /* If you don't want to change the HTML, the current design will place the cart at the end of the mobile menu. */
