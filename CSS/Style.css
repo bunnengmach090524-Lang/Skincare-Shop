@@ -244,7 +244,7 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 350px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
@@ -266,10 +266,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -283,25 +283,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -313,7 +327,7 @@ a:hover {
         align-items: center;
         width: 60px;
         position: relative;
-        left: 470px;
+        left: 130px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -337,13 +351,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
-        height: 550px; 
+        width: 350px;
+        height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -359,10 +375,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -376,25 +392,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -406,7 +436,7 @@ a:hover {
         align-items: center;
         width: 60px;
         position: relative;
-        left: 210px;
+        left: 135px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -430,13 +460,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
-        height: 550px; 
+        width: 350px;
+        height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -452,10 +484,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -469,25 +501,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -499,7 +545,7 @@ a:hover {
         align-items: center;
         width: 60px;
         position: relative;
-        left: 375px;
+        left: 135px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -524,13 +570,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
-        height: 550px; 
+        width: 350px;
+        height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -546,10 +594,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -563,25 +611,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -592,8 +654,6 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        position: relative;
-        left: 341px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -618,13 +678,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 350px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -640,10 +702,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -657,25 +719,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -686,7 +762,6 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        margin-left: -25px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -711,13 +786,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 350px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -733,10 +810,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -750,25 +827,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -779,7 +870,6 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        margin-left: -65px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -804,13 +894,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 300px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -826,10 +918,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -843,25 +935,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -872,14 +978,14 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        margin-left: -90px;
+        margin-left: -25px;
     }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
-        margin-left: auto; /* Push it to the right */
-        margin-right: 15px; /* Space before the toggle button */
+        margin-left: auto; 
+        margin-right: 15px;     
     }
 }
 
@@ -897,13 +1003,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 250px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -919,10 +1027,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -936,25 +1044,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 200px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -965,14 +1087,14 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        margin-left: -128px;
+        margin-left: -50px;
     }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
-        margin-left: auto; /* Push it to the right */
-        margin-right: 15px; /* Space before the toggle button */
+        margin-left: auto; 
+        margin-right: 15px;     
     }
 }
 
@@ -990,13 +1112,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 250px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -1012,10 +1136,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -1029,21 +1153,142 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 200px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
+    }
+    .dropdown-content a:hover {
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -50px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; 
+        margin-right: 15px;     
+    }
+}
+
+@media (max-width: 450px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 250px;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
+        width: 100%;
+        text-align: center;
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
+    .drop li:hover .dropdown-content {
+        display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 200px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
         border-left: none; /* Remove left border decoration on mobile */
@@ -1058,14 +1303,14 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        margin-left: -145px;
+        margin-left: -50px;
     }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
-        margin-left: auto; /* Push it to the right */
-        margin-right: 15px; /* Space before the toggle button */
+        margin-left: auto; 
+        margin-right: 15px;     
     }
 }
 
@@ -1083,13 +1328,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
-        height: 550px; 
+        width: 230px;
+        height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -1105,10 +1352,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -1122,25 +1369,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 160px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 100px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -1151,8 +1412,7 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        position: relative;
-        left: 320px;
+        margin-left: -60px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -1177,13 +1437,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
+        width: 200px;
         height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -1199,10 +1461,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -1216,27 +1478,40 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 160px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 100px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
-    
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
     .drop > .cart {
         display: block; /* Hide the cart inside the vertical menu flow */
@@ -1245,8 +1520,7 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        position: relative;
-        right: 350px;
+        margin-left: -75px;
     }
     
     /* Place the cart button back next to the logo for mobile */
@@ -1271,13 +1545,15 @@ a:hover {
         position: fixed; 
         top: 80px;
         left: 0;
-        width: 100%;
-        height: 400px; 
+        width: 200px;
+        height: 460px; 
         background-color: rgba(216, 112, 147, 0.95);
         z-index: 1000;
         opacity: 0;
         visibility: hidden; 
         pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         transition: all 0.3s ease-in-out;
     }
 
@@ -1293,10 +1569,10 @@ a:hover {
         padding: 10px 0;
     }
 
-    .drop li {
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .drop li:last-child {
         border-bottom: none;
@@ -1310,25 +1586,39 @@ a:hover {
         color: rgba(255, 1, 86, 0.806);
         border-radius: 0;
     }
-
     /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
     .drop li:hover .dropdown-content {
         display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 160px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
     }
     .dropdown-content {
-        position: static; /* Stack naturally below the main link */
-        min-width: 100%;
-        background: rgba(107, 73, 85, 0.7); /* Slightly darker background for submenu */
-        box-shadow: none;
-        border-radius: 0;
+        position: absolute;
+        min-width: 100px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
+
     .dropdown-content a {
-        padding: 10px 20px;
-        text-align: center;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
     }
     .dropdown-content a:hover {
-        border-left: none; /* Remove left border decoration on mobile */
-        padding-left: 20px;
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
     }
     
     /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
@@ -1339,8 +1629,7 @@ a:hover {
         justify-content: center;
         align-items: center;
         width: 60px;
-        position: relative;
-        left: -300px;
+        margin-left: -75px;
     }
     
     /* Place the cart button back next to the logo for mobile */
