@@ -118,7 +118,7 @@ a:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(141, 136, 136, 0.502);
+    background: rgba(98, 93, 93, 0.788);
     min-width: 160px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     border-radius: 15px;
@@ -1642,7 +1642,84 @@ a:hover {
 /* Re-add a separate cart for mobile in the HTML and style it here: */
 /* I recommend placing a new cart button right next to the menu-toggle for mobile */
 /* If you don't want to change the HTML, the current design will place the cart at the end of the mobile menu. */
+/* Section Carousel */
+/* Container for the whole section */
+.skincare-section {
+    height: fit-content;
+    padding: 40px;
+    background-color: #e6bbc9ad; /* Matches your pinkish theme */
+    text-align: center;
+}
 
+/* Heading style provided by you */
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    box-shadow: #555 0px 0px 8px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+    background: rgba(216, 112, 147, 0.877);
+}
+
+/* The Slider Wrapper */
+.product-slider {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    text-align: left;
+}
+
+/* Individual Product Cards */
+.product-card {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    min-width: 280px; /* Fixed width to force scrolling */
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+/* CUSTOM SCROLLBAR (Matches your first image) */
+.product-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-slider::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.product-slider::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+.product-slider::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    box-shadow: #555 0px 0px 8px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+    background: rgba(216, 112, 147, 0.877);
+    animation: pulse 2s infinite;
+}
 /* Hero Section */
 .hero-section {
     height: auto;
@@ -1743,7 +1820,6 @@ a:hover {
     max-width: 100%;
     height: 300px;
     border-radius: 8px;
-    margin-bottom: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     transform: scale(0.9);
@@ -1754,21 +1830,30 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .product-card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
     font-size: 1.5em;
     margin-bottom: 5px;
 }
 
 .product-card p {
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
     font-size: 0.9em;
 }
 
-.price {
+.product-card .price {
     font-size: 1.4em;
     color: #ffffff;
     font-weight: bold;
     margin-top: 10px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* Add to Cart Button */
 .add-to-cart {
@@ -1781,8 +1866,26 @@ a:hover {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 15px;
+    margin-left: 15px;
 }
 .add-to-cart:hover {
+    background-color: #d1787c;
+    transform: translateY(-3px);
+}
+
+.view-more {
+    background-color: #e5989bc9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.view-more:hover {
     background-color: #d1787c;
     transform: translateY(-3px);
 }
@@ -2116,19 +2219,30 @@ a:hover {
 }
 
 .cart-content h2 {
-  text-align: center;
-  margin-top: 0;
-  font-size: 1.8em;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-left: 130px;
 }
 
-.close-btn {
-    color: #aaa;
+.cart-modal .close-btn {
     float: right;
-    font-size: 28px;
+    font-size: 60px;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+}
+.close-btn:hover {
+    cursor: pointer;
+    color: rgb(255, 0, 0);
 }
 
 .cart-items {
@@ -2315,4 +2429,91 @@ a:hover {
         .message-box.show {
             opacity: 1;
             pointer-events: auto;
+        }
+
+        /* login/register form styles */
+        
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .auth-form {
+            background-color: #d1787cd6;
+            color: whitesmoke;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .auth-form h2 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background-color: #f09ce628;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .auth-form button:hover {
+            background-color: #ff7676;
+        }
+
+        .toggle-form {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .toggle-form a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .error-message {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
         }
