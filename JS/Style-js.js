@@ -759,12 +759,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Replace your "getEl" lines with this:
+    const welcome = document.getElementById('welcome-modal');
+    const closeBtn = document.getElementById('close-modal');
+
+    if (closeBtn && welcome) {
+        closeBtn.addEventListener('click', () => {
+            welcome.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
     // Welcome Modal
-    const welcome = getEl('welcome-modal');
-    getEl('close-modal')?.addEventListener('click', () => {
-        welcome.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
+    // const welcome = getEl('welcome-modal');
+    // getEl('close-modal')?.addEventListener('click', () => {
+    //     welcome.style.display = 'none';
+    //     document.body.style.overflow = 'auto';
+    // });
 
     // sort
     // Add this inside your DOMContentLoaded function
