@@ -12,6 +12,17 @@
 <body>
     <!-- Global Message Box -->
     <div id="message-box" class="message-box"></div>
+    <div id="welcome-modal" class="modal-overlay">
+            <div class="modal-box">
+                <h1 class="modal-title">សូមស្វាគមន៍មកកាន់ Darling Store របស់ខ្ញុំ</h1>
+                <h1 class="modal-title">Welcome to my Darling Store</h1>
+                
+                <div class="modal-body">
+                    <p>Welcome to Darling Store, your curated destination for clean, effective, and science-backed skincare. We believe that healthy skin is the foundation of confidence. Our mission is to simplify your daily routine by providing only the most trusted products that nourish, protect, and enhance your natural glow. Whether you are starting your skincare journey or are a seasoned pro, we are here to help you unlock your skin’s full potential.</p>
+                    </div>
+                <button id="close-modal" class="modal-btn">តោះ មើលតិចសិនទៅ</button>
+            </div>
+        </div>
     <header class="main-header">
         <div class="logo">
             <span class="logo-text">Darling Store</span>
@@ -32,7 +43,6 @@
                         <a href="#">Oil Cleansers</a>
                         <a href="#">Cleansers </a>
                         <a href="#">Toner</a>
-                        <a href="#">Essence</a>
                         <a href="#">Serums</a>
                         <a href="#">Moisturizers</a>
                         <a href="#">Sunscreen</a>
@@ -78,20 +88,29 @@
                 </span>
             </ul>
             
-            <div id="cartModal" class="cart-modal">
+           <div id="cartModal" class="cart-modal">
                 <div class="cart-content">
-                    <div class="close-btn" onclick="toggleCart()">&times;</div>
-                    <h2>Your Cart</h2>
-                    <div id="cartItems" class="cart-items"></div>
+                    <span class="close-cart" id="closeCartCross">&times;</span>
+                    
+                    <div class="cart-header">Your Cart</div>
+                    
+                    <div id="cartItems" class="cart-items">
+                        </div>
                 </div>
             </div>
+
             <div id="qrModal" class="qr-modal">
                 <div class="qr-content">
-                    <span class="close-btn" onclick="toggleQrModal()">&times;</span>
+                    <span class="close-btn" id="closeQrCross">&times;</span>
                     <div class="qr-modal-inner">
                         <h2 class="qr-title">Scan to Pay</h2>
-                        <img src="image/photo_2025-05-17_11-09-35.jpg" alt="ABA Pay QR Code" class="qr-code-image">
-                        <!-- <p class="scan-text">Scan. Pay. Done.</p> -->
+                        <img src="image/photo_2025-05-17_11-09-35.jpg" alt="ABA Pay" class="qr-code-image">
+                        
+                        <h3 id="qrTotal"></h3>
+                        
+                        <button id="backToCart" class="back-to-card">
+                            ← Back to Your Cart
+                        </button>
                     </div>
                 </div>
             </div>
@@ -109,7 +128,6 @@
                 <img src="https://i.pinimg.com/originals/aa/b7/52/aab7523f5c40f75e20a2749e271f863c.jpg" alt="Skincare products">
             </div>
         </section>
-
        <section class="skincare-section">
             <h2 data-aos="fade-right">Population Products</h2>
             
@@ -119,6 +137,38 @@
 
         <section class="products-section" id="shop-now">
             <h2 data-aos="fade-right">Featured Products</h2>
+            <div class="filter-container" data-aos="fade-up">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="productSearch" placeholder="ស្វែងរកផលិតផល... (Search products)">
+                </div>
+
+                <div class="filter-controls">
+                    <div class="select-wrapper">
+                        <i class="fas fa-filter"></i>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="serums">Serums</option>
+                            <option value="cleansers">Cleansers</option>
+                            <option value="Oil Cleansers">Oil Cleansers</option>
+                            <option value="moisturizers">Moisturizers</option>
+                            <option value="Sunscreen">Sunscreen</option>
+                            <option value="Toner">Toner</option>
+                            <option value="Cream & Gel Cream">Cream & Gel Cream</option>
+                            <option value="Lip Oil">Lip Oil</option>
+                        </select>
+                    </div>
+
+                    <div class="select-wrapper">
+                        <i class="fas fa-sort-amount-down"></i>
+                        <select id="priceSort">
+                            <option value="default">រៀបតាម (Sort By)</option>
+                            <option value="low">តម្លៃ: ទាប ទៅ ខ្ពស់ (Price: Low to High)</option>
+                            <option value="high">តម្លៃ: ខ្ពស់ ទៅ ទាប (Price: High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="product-grid" id="product-grid">
                 <!-- Product cards will be added here by JavaScript -->
             </div>
@@ -190,6 +240,6 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./JS/Style-js.js"></script>
+    <script src="./js/Style-js.js"></script>
 </body>
 </html>

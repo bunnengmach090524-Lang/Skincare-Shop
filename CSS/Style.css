@@ -145,6 +145,137 @@ a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Modal Overlay */
+/* Full screen background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 12, 28, 0.735); /* Dark semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it is on top of everything */
+}
+
+/* The popup box */
+.modal-box {
+  background: rgba(169, 23, 125, 0.256);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  color: whitesmoke;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Title with gradient */
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.5;
+}
+
+.modal-body {
+  color: #ccd6f6;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* The Purple Button */
+.modal-btn {
+  background: linear-gradient(135deg, #ff0fcb 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Search Items */
+.filter-container { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    background: rgba(147, 89, 143, 0.5);
+    border-radius: 20px;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-wrapper input {
+    width: 500px;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s;
+    color: black;
+    background: rgba(255, 192, 203, 0.712);
+}
+
+.search-wrapper input:focus {
+    border-color: #d1a3ff; /* Matching your purple theme */
+    box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #535252;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #830bfc;
+    pointer-events: none;
+}
+
+.select-wrapper select {
+    padding: 10px 15px 10px 35px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: rgba(240, 90, 150, 0.354);
+    cursor: pointer;
+    outline: none;
+    color: #1a1a1a;
+}
 /* Cart Styling */
 .cart {
     display: inline-flex; 
@@ -336,6 +467,82 @@ a:hover {
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
     }
+
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+    }
+
+    .search-wrapper input {
+        width: 300px;
+        padding: 12px 40px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -90px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
 }
 @media (max-width: 992px) {
     .main-header {
@@ -444,6 +651,264 @@ a:hover {
         display: flex;
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
+    }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+    }
+
+    .search-wrapper input {
+        width: 290px;
+        padding: 12px 40px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -120px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+}
+
+@media (max-width: 875px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 350px;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
+        width: 100%;
+        text-align: center;
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
+    .drop li:hover .dropdown-content {
+        display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
+    }
+    .dropdown-content a:hover {
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        position: relative;
+        left: 135px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+    }
+
+    .search-wrapper input {
+        width: 290px;
+        padding: 12px 40px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -180px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
     }
 }
 @media (max-width: 834px) {
@@ -554,8 +1019,252 @@ a:hover {
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
     }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 610px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -210px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
 }
 
+@media (max-width: 800px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 350px;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
+        width: 100%;
+        text-align: center;
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
+    .drop li:hover .dropdown-content {
+        display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
+    }
+    .dropdown-content a:hover {
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 580px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+}
 @media (max-width: 768px) {
     .main-header {
         padding: 15px 25px;
@@ -661,6 +1370,88 @@ a:hover {
         display: flex;
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
+    }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 550px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -240px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+    .product-detail-container > .detail-image-section > img {
+        width: 300px;
+        height: 350px;
     }
 }
 
@@ -770,9 +1561,91 @@ a:hover {
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
     }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 490px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -280px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+    .product-detail-container > .detail-image-section > img {
+        width: 300px;
+        height: 350px;
+    }
 }
 
-@media (max-width: 628px) {
+@media (max-width: 678px) {
     .main-header {
         padding: 15px 25px;
     }
@@ -878,8 +1751,281 @@ a:hover {
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
     }
-}
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
 
+    .search-wrapper input {
+        width: 450px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .product-detail-container > .detail-image-section > img {
+        width: 300px;
+        height: 350px;
+    }
+    .detail-info-section > .price {
+        position: relative;
+        left: 0;
+        margin-left: -40px;
+    }
+
+    .detail-info-section > .detail-actions > .add-to-cart-large {
+        margin-left: 0;
+    }
+}
+@media (max-width: 628px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 350px;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
+        width: 100%;
+        text-align: center;
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
+    .drop li:hover .dropdown-content {
+        display: block;
+        position: absolute; 
+        left: 100%;   
+        width: 250px;       
+        border-radius: 0 15px 15px 0; 
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
+    }
+    .dropdown-content a:hover {
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+        margin-right: 15px; /* Space before the toggle button */
+    }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 360px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 15px;
+    }
+
+    .select-wrapper {
+        width: 70%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .select-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: #830bfc;
+        pointer-events: none;
+    }
+
+    .select-wrapper select {
+        width: 90%;
+        padding: 10px 15px 10px 35px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: rgba(240, 90, 150, 0.354);
+        cursor: pointer;
+        outline: none;
+        color: #1a1a1a;
+    }
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -320px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+    .product-detail-container > .detail-image-section > img {
+        width: 270px;
+        height: 350px;
+    }
+    .detail-info-section > .price {
+        position: relative;
+        left: 0;
+        margin-left: -50px;
+    }
+
+    .detail-info-section > .detail-actions > .add-to-cart-large {
+        margin-left: 0;
+    }
+}
 @media (max-width: 585px) {
     .main-header {
         padding: 15px 25px;
@@ -987,8 +2133,208 @@ a:hover {
         margin-left: auto; 
         margin-right: 15px;     
     }
+
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -345px;
+    }
+
+    .cart-content {
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+    .product-detail-container > .detail-image-section > img {
+        width: 250px;
+        height: 350px;
+    }
+    .detail-info-section > .price {
+        position: relative;
+        left: 0;
+        margin-left: -60px;
+    }
+
+    .detail-info-section > .detail-actions > .add-to-cart-large {
+        margin-left: 0;
+        width: 110px;
+    }
+    .detail-info-section > .detail-actions > .wishlist-icon {
+        margin-left: 40px;
+        width: 10px;
+    }
 }
 
+@media (max-width: 545px) {
+    .main-header {
+        padding: 15px 25px;
+    }
+    
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navlinks {
+        position: fixed; 
+        top: 80px;
+        left: 0;
+        width: 300px;
+        height: 460px; 
+        background-color: rgba(216, 112, 147, 0.95);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden; 
+        pointer-events: none; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks.expanded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Change navigation items to stack vertically */
+    .navlinks ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .drop li,span {
+        position: relative; /* This ensures the dropdown aligns to the specific <li> */
+        width: 100%;
+        text-align: center;
+    }
+    .drop li:last-child {
+        border-bottom: none;
+    }
+    
+    .drop li a {
+        padding: 15px 0;
+    }
+    .drop li a:hover {
+        background: none;
+        color: rgba(255, 1, 86, 0.806);
+        border-radius: 0;
+    }
+    /* Fix dropdowns for mobile: make them full width and stack inside */
+    /* Change this block in your CSS */
+    .drop li:hover .dropdown-content {
+        display: block;
+        position: absolute; /* Changed from static/relative */
+        top: 0;          
+        left: 100%;         /* Push it to the right of the sidebar */
+        width: 250px;       /* Set a specific width for the submenu */
+        border-radius: 0 15px 15px 0; /* Optional: round the outer corners */
+        z-index: 1001;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* This creates the "ruler" line */
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        min-width: 200px;
+        background: rgba(107, 73, 85, 0.9); /* Matching the dark style in your image */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 0;
+        border-bottom: none !important; /* Remove lines inside the submenu */
+    }
+    .dropdown-content a:hover {
+         background-color: rgba(50, 11, 24, 0.607);
+        color: rgba(255, 192, 203, 0.9); /* Lighter pink hover */
+        border-left: 4px solid rgba(255, 1, 86, 0.806);
+        padding-left: 11px;
+    }
+    
+    /* Cart button should be outside the menu flow on mobile, next to logo/toggle */
+    .drop > .cart {
+        display: block; /* Hide the cart inside the vertical menu flow */
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin-left: -25px;
+    }
+
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 320px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
+    
+    /* Place the cart button back next to the logo for mobile */
+    .main-header > .cart {
+        display: flex;
+        margin-left: auto; 
+        margin-right: 15px;     
+    }
+
+    .cart-content > .close-cart {
+        position: relative;
+        left: 430px;
+    }
+    /* This is the container box */
+    .cart-modal {
+        align-items: flex-start; /* Stop centering vertically */
+        padding-top: 440px;       /* Push the box down to clear the navbar */
+        margin-left: -364px;
+    }
+
+    .cart-content {
+        width: 280px;
+        margin-top: 20px;        /* Extra gap from the navbar area */
+        width: 95%;              /* Make it slightly wider on small screens */
+        max-height: 70vh;        /* Prevent it from being too long on mobile */
+    }
+    .modal-box {
+        width: 300px;
+    }
+    
+}
 @media (max-width: 510px) {
     .main-header {
         padding: 15px 25px;
@@ -1089,6 +2435,41 @@ a:hover {
         width: 60px;
         margin-left: -50px;
     }
+
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 280px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
@@ -1096,6 +2477,46 @@ a:hover {
         margin-left: auto; 
         margin-right: 15px;     
     }
+    /* 1. Push it under the navbar */
+    .cart-modal {
+        align-items: flex-start !important; /* Forces it to the top */
+        padding-top: 450px !important;      /* Adjust this to your navbar height */
+    }
+
+    /* 2. Set the narrow width */
+    .cart-content {
+        width: 280px !important;           /* Fixed narrow width as requested */
+        max-width: 280px !important;
+        margin: 0 auto !important;         /* Keeps it centered horizontally */
+        padding: 15px !important;
+    }
+
+    /* 3. Scale down text and images to fit the 280px box */
+    .cart-header {
+        font-size: 22px !important;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 13px;
+    }
+
+    .cart-item img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Adjust the X button so it stays in the corner of the small box */
+    .close-cart {
+        font-size: 24px !important;
+        top: 10px !important;
+        right: 10px !important;
+    }
+
 }
 
 @media (max-width: 475px) {
@@ -1198,12 +2619,51 @@ a:hover {
         width: 60px;
         margin-left: -50px;
     }
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 250px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
         margin-left: auto; 
         margin-right: 15px;     
+    }
+    .modal-box {
+        position: relative;
+        left: -20px;
+        width: 270px;
     }
 }
 
@@ -1306,11 +2766,84 @@ a:hover {
         margin-left: -50px;
     }
     
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 220px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
         margin-left: auto; 
         margin-right: 15px;     
+    }
+    /* 1. Push it under the navbar */
+    .cart-modal {
+        align-items: flex-start !important; /* Forces it to the top */
+        padding-top: 450px !important;      /* Adjust this to your navbar height */
+    }
+
+    /* 2. Set the narrow width */
+    .cart-content {
+        width: 280px !important;           /* Fixed narrow width as requested */
+        max-width: 280px !important;
+        margin: 0 auto !important;         /* Keeps it centered horizontally */
+        padding: 15px !important;
+    }
+
+    /* 3. Scale down text and images to fit the 280px box */
+    .cart-header {
+        font-size: 22px !important;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 13px;
+    }
+
+    .cart-item img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Adjust the X button so it stays in the corner of the small box */
+    .close-cart {
+        font-size: 24px !important;
+        top: 10px !important;
+        right: 10px !important;
     }
 }
 
@@ -1414,12 +2947,92 @@ a:hover {
         width: 60px;
         margin-left: -60px;
     }
+
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 200px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
+    }
+    /* 1. Push it under the navbar */
+    .cart-modal {
+        align-items: flex-start !important; /* Forces it to the top */
+        padding-top: 450px !important;      /* Adjust this to your navbar height */
+        margin-left: -420px;
+    }
+
+    /* 2. Set the narrow width */
+    .cart-content {
+        width: 280px !important;           /* Fixed narrow width as requested */
+        max-width: 280px !important;
+        margin: 0 auto !important;         /* Keeps it centered horizontally */
+        padding: 15px !important;
+    }
+
+    /* 3. Scale down text and images to fit the 280px box */
+    .cart-header {
+        font-size: 22px !important;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 13px;
+    }
+
+    .cart-item img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Adjust the X button so it stays in the corner of the small box */
+    .close-cart {
+        font-size: 24px !important;
+        top: 10px !important;
+        right: 10px !important;
+    }
+    .modal-box {
+        position: relative;
+        left: -38px;
+        width: 250px;
     }
 }
 
@@ -1522,12 +3135,87 @@ a:hover {
         width: 60px;
         margin-left: -75px;
     }
+
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 170px;
+        padding: 12px 40px;
+        margin-left: 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
+    }
+    /* 1. Push it under the navbar */
+    .cart-modal {
+        align-items: flex-start !important; /* Forces it to the top */
+        padding-top: 450px !important;      /* Adjust this to your navbar height */
+        margin-left: -445px;
+    }
+
+    /* 2. Set the narrow width */
+    .cart-content {
+        width: 280px !important;           /* Fixed narrow width as requested */
+        max-width: 280px !important;
+        margin: 0 auto !important;         /* Keeps it centered horizontally */
+        padding: 15px !important;
+    }
+
+    /* 3. Scale down text and images to fit the 280px box */
+    .cart-header {
+        font-size: 22px !important;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 13px;
+    }
+
+    .cart-item img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Adjust the X button so it stays in the corner of the small box */
+    .close-cart {
+        font-size: 24px !important;
+        top: 10px !important;
+        right: 10px !important;
     }
 }
 
@@ -1632,11 +3320,90 @@ a:hover {
         margin-left: -75px;
     }
     
+    /* search */
+    .search-wrapper {
+        position: relative;
+        flex: 1;
+        width: 100px;
+        left: 0;
+    }
+
+    .search-wrapper input {
+        width: 140px;
+        padding: 10px 50px;
+        margin-left: -10px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: 0.3s;
+        color: black;
+        background: rgba(255, 192, 203, 0.712);
+    }
+
+    .search-wrapper input:focus {
+        position: relative;
+        left: 0;
+        border-color: #d1a3ff; /* Matching your purple theme */
+        box-shadow: 0 0 8px rgba(209, 163, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #535252;
+    }
     /* Place the cart button back next to the logo for mobile */
     .main-header > .cart {
         display: flex;
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
+    }
+    /* 1. Push it under the navbar */
+    .cart-modal {
+        align-items: flex-start !important; /* Forces it to the top */
+        padding-top: 450px !important;      /* Adjust this to your navbar height */
+        margin-left: -455px;
+    }
+
+    /* 2. Set the narrow width */
+    .cart-content {
+        width: 280px !important;           /* Fixed narrow width as requested */
+        max-width: 280px !important;
+        margin: 0 auto !important;         /* Keeps it centered horizontally */
+        padding: 15px !important;
+    }
+
+    /* 3. Scale down text and images to fit the 280px box */
+    .cart-header {
+        font-size: 22px !important;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 13px;
+    }
+
+    .cart-item img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* Adjust the X button so it stays in the corner of the small box */
+    .close-cart {
+        font-size: 24px !important;
+        top: 10px !important;
+        right: 10px !important;
+    }
+    .modal-box {
+        position: relative;
+        left: -72px;
+        width: 250px;
     }
 }
 /* Re-add a separate cart for mobile in the HTML and style it here: */
@@ -1856,7 +3623,8 @@ h2 {
     align-items: center;
 }
 /* Add to Cart Button */
-.add-to-cart {
+
+.card-buttons > .add-to-cart {
     background-color: #e5989bc9;
     color: #fff;
     border: none;
@@ -1864,15 +3632,24 @@ h2 {
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
     margin-top: 15px;
     margin-left: 15px;
+    transition: all 0.3s ease;
 }
 .add-to-cart:hover {
     background-color: #d1787c;
     transform: translateY(-3px);
 }
-
+/* Ensure there is NO space between .add-to-cart and .btn-success-state */
+.card-buttons .add-to-cart.btn-success-state {
+    background: #2d5a5a !important;
+    background-image: linear-gradient(135deg, #2d5a5a, #4a7c7c) !important;
+    color: #ffffff !important;
+    transform: scale(0.96) !important;
+    border: none !important;
+    cursor: default;
+}
 .view-more {
     background-color: #e5989bc9;
     color: #fff;
@@ -2186,18 +3963,48 @@ h2 {
     }
 }
 /* show product details to pay */
+/* Ensure modal is a Flexbox for centering */
+.cart-header {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 30px;
+    display: block;
+}
+
+/* THE CROSS (Close Button) */
+.close-cart {
+   position: absolute;
+    top: 15px;
+    right: 20px;       /* This forces it to the right */
+    font-size: 30px;
+    line-height: 1;
+    color: #ff0000;
+    cursor: pointer;
+    z-index: 10;/* Ensures it stays on top and clickable */
+}
+
+/* Fix Item Overlapping */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.cart-item-info { display: flex; align-items: center; gap: 15px; }
+.cart-item img { width: 50px; height: 50px; border-radius: 5px; object-fit: cover; }
+.cart-item-name { font-weight: bold; display: block; }
+.remove-btn { background: none; border: none; color: #ff4d4d; font-size: 20px; cursor: pointer; }
 /* CSS for the Cart Modal */
 .cart-modal {
     display: none; /* Hidden by default */
     position: fixed;
     z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.358); /* Black background with opacity */
-    justify-content: center;
-    align-items: center;
+    left: 390px;
+    top: 90px;
+    width: 500px;
+    height: 450px;
 }
 
 .cart-modal.visible {
@@ -2205,7 +4012,7 @@ h2 {
 }
 
 .cart-content {
-    background-color: #ca9da194;
+    background-color: #a82d7191;
     color: whitesmoke;
     padding: 20px;
     border-radius: 14px;
@@ -2213,22 +4020,20 @@ h2 {
     width: 90%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     position: relative;
+    padding-top: 40px;
     max-height: 80vh;
     overflow-y: auto;
     font-weight: bold;
 }
 
 .cart-content h2 {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto;          /* Remove the fixed 200px width */
+    display: block;       /* Change from flex if you just want centered text */
     text-align: center;
-    margin-top: 0;
+    margin: 0 auto 10px auto; /* Centers the block and adds bottom margin */
     font-size: 1.8em;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
-    margin-left: 130px;
 }
 
 .cart-modal .close-btn {
@@ -2370,23 +4175,24 @@ h2 {
 }
 
 .qr-modal-inner {
+    height: 520px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .qr-title {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: bold;
     color: whitesmoke;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(100, 255, 255, 0.872);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .qr-code-image {
     width: 100%;
-    height: auto;
+    height: 360px;
     max-width: 300px; /* Adjust as needed */
     margin-top: 10px;
 }
@@ -2396,12 +4202,35 @@ h2 {
     color: whitesmoke;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(100, 255, 255, 0.872);
-    margin-top: 10px;
+}
+
+#qrTotal {
+    font-weight: 900;
+    color: wheat;
+}
+ 
+.qr-modal-inner > .back-to-card {
+    text-align: center;
+    background-color: rgba(161, 62, 62, 0.566);
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    transition: all 0.7s ease-in-out;
+}
+.qr-modal-inner > .back-to-card:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: palevioletred;
+    transition: all 0.7s ease-in-out;
+    padding-right: 50px;
 }
 
 /* You might want to update the existing close button style */
 .close-btn {
-    position: absolute;
+    position: relative;
     top: 10px;
     right: 20px;
     color: #aaa;
@@ -2516,4 +4345,119 @@ h2 {
             margin-top: 0.5rem;
             text-align: left;
             display: none;
+        }
+
+        /* view more detail */
+        .product-detail-container {
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+            background: #d58484b1;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .detail-image-section img {
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .detail-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .detail-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .detail-info-section > .name-products-detail {
+            width: auto;
+            color: rgb(216, 205, 205);
+            font-size: 25px;
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 0;
+            box-shadow: 0 4px 6px rgba(215, 73, 125, 0.799);
+            background-color: #9d2789dc;
+            display: flex;
+            justify-content: center;
+        }
+        .detail-info-section > .price {
+            width: fit-content;
+            position: relative;
+            left: 100px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(215, 73, 125, 0.799);
+            background-color: #67688857;
+        }
+
+        .detail-actions > .add-to-cart-large {
+            background-color: rgba(0, 21, 255, 0.893); 
+            color: white;
+            height: 40px;
+            border-radius: 12px;
+            padding: 2px 10px;
+            border: none;
+            cursor: pointer;
+            margin-left: 50px;
+            transition: all .5s ease-in-out;
+        }
+
+        .add-to-cart-large:hover {
+            background-color: palevioletred;
+            transition: all .5s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        .detail-info-section > .detail-actions > .wishlist-icon {
+            margin-right: 50px;
+            transition: all .5s ease-in-out;
+        }
+        .detail-info-section > .detail-actions > .wishlist-icon:hover {
+            /* Remove background and padding entirely */
+            background: transparent; 
+            padding-right: 0;
+            color: #ff0000;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+        }
+        .wishlist-icon svg path {
+            transition: fill 0.7s ease;
+            width: fit-content;
+            transition: all .5s ease-in-out;
+        }
+
+        .wishlist-icon:hover svg path {
+            transition: all .5s ease-in-out;
+            fill: red; /* This fills the INSIDE of the heart */
+        }
+
+        /* Target the heart shape specifically */
+        .detail-info-section > .detail-actions > .wishlist-icon:hover svg path {
+            fill: red;
+            transition: fill 0.7s ease-in-out;
+        }
+                
+        .detail-info-section .back-btn {
+            background-color: rgba(161, 62, 62, 0.566);
+            border-radius: 8px;
+            padding: 5px;
+            font-size: 15px;
+            outline: none;
+            border: none;
+            transition: all 0.7s ease-in-out;
+        }
+        .detail-info-section .back-btn:hover {
+            background-color: palevioletred;
+            transition: all 0.7s ease-in-out;
+            padding-right: 50px;
         }

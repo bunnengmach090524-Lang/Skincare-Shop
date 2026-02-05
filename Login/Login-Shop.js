@@ -1,3 +1,4 @@
+
 // login
 // // 2. Form switching logic
 const loginForm = document.getElementById('loginForm');
@@ -80,6 +81,9 @@ function showMessage(message) {
         setTimeout(() => messageBox.remove(), 500);
     }, 2000);
 }
+
+
+
 function render(list) {
     grid.innerHTML = list.map(productCard).join('');
     setupCardBehavior();
@@ -115,6 +119,7 @@ function btnSuccessFlash(el) {
         el.style.background = '';
     }, 900);
 }
+
 
 function cartPing() {
     const c = cartCountEl;
