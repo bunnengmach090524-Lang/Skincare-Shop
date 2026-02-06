@@ -175,7 +175,7 @@ a:hover {
 
 /* Title with gradient */
 .modal-title {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   margin-bottom: 20px;
   background: linear-gradient(to right, #a78bfa, #f472b6);
   -webkit-background-clip: text;
@@ -194,7 +194,7 @@ a:hover {
   background: linear-gradient(135deg, #ff0fcb 0%, #6366f1 100%);
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 8px 20px;
   font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
@@ -2477,10 +2477,10 @@ a:hover {
         margin-left: auto; 
         margin-right: 15px;     
     }
-    /* 1. Push it under the navbar */
-    .cart-modal {
-        align-items: flex-start !important; /* Forces it to the top */
-        padding-top: 450px !important;      /* Adjust this to your navbar height */
+     .cart-modal {
+        align-items: flex-start !important; /* Stop centering vertically */
+        padding-top: 450px !important;       /* Push the box down to clear the navbar */
+        margin-left: -364px;
     }
 
     /* 2. Set the narrow width */
@@ -2520,6 +2520,11 @@ a:hover {
 }
 
 @media (max-width: 475px) {
+    .modal-box {
+        padding-top: 10px;
+        margin-bottom: 200px;
+        margin-left: 40px;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -2848,6 +2853,10 @@ a:hover {
 }
 
 @media (max-width: 428px) {
+    .modal-box {
+        /* pad */
+        margin-left: 70px;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -3037,6 +3046,10 @@ a:hover {
 }
 
 @media (max-width: 390px) {
+    .modal-box {
+        /* pad */
+        margin-left: 70px;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -3220,6 +3233,21 @@ a:hover {
 }
 
 @media (max-width: 375px) {
+    .modal-overlay > .modal-box {
+        width: 500px;
+        font-size: 12px;
+        margin-left: 150px;
+    }
+    .modal-btn {
+        background: linear-gradient(135deg, #ff0fcb 0%, #6366f1 100%);
+        color: white;
+        border: none;
+        padding: 2px 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
     .main-header {
         padding: 15px 25px;
     }
