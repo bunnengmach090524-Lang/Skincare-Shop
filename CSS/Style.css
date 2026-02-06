@@ -2673,6 +2673,12 @@ a:hover {
 }
 
 @media (max-width: 450px) {
+    .modal-box {
+        margin-top: 40px;
+        padding-top: 10px;
+        margin-bottom: 200px;
+        margin-left: 40px;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -2854,6 +2860,7 @@ a:hover {
 
 @media (max-width: 428px) {
     .modal-box {
+        margin-top: 80px;
         /* pad */
         margin-left: 70px;
     }
@@ -3046,7 +3053,8 @@ a:hover {
 }
 
 @media (max-width: 390px) {
-    .modal-box {
+    .modal-overlay > .modal-box {
+        margin-top: 280px;
         /* pad */
         margin-left: 70px;
     }
@@ -3234,6 +3242,7 @@ a:hover {
 
 @media (max-width: 375px) {
     .modal-overlay > .modal-box {
+        margin-top: 180px;
         width: 500px;
         font-size: 12px;
         margin-left: 150px;
