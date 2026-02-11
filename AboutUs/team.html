@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darling Skincare</title>
-    <link rel="stylesheet" href="./CSS/Style.css">
+    <link rel="stylesheet" href="/CSS/Style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,7 +26,7 @@
     <header class="main-header">
         <div class="logo">
             <span class="logo-text">Darling Store</span>
-            <img class="logo-image" src="./image/New-logo.jpg" alt="logo">
+            <img class="logo-image" src="/image/New-logo.jpg" alt="logo">
         </div>
         
         <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
@@ -35,19 +35,19 @@
         <nav class="navlinks" id="main-navigation">
             <ul class="drop" role="menubar" aria-label="Main menu">
                 <li class="active">
-                    <a href="#home">Home</a>
+                    <a href="/index.html">Home</a>
                 </li>
                 <li class="active">
                     <a href="#products">Products</a>
                     <div class="dropdown-content">
-                        <a class="nav-filter" data-category="Oil Cleansers" href="#products">Oil Cleansers</a>
-                        <a class="nav-filter" data-category="Cleansers" href="#products">Cleansers</a>
-                        <a class="nav-filter" data-category="Toner" href="#products">Toner</a>
-                        <a class="nav-filter" data-category="Serums" href="#products">Serums</a>
-                        <a class="nav-filter" data-category="Moisturizers" href="#products">Moisturizers</a>
-                        <a class="nav-filter" data-category="Sunscreen" href="#products">Sunscreen</a>
-                        <a class="nav-filter" data-category="Cream & Gel Cream" href="#products">Cream & Gel Cream</a>
-                        <a class="nav-filter" data-category="Lip Oil" href="#products">Lip Oil</a>
+                        <a id="categoryFilter" href="#Oil Cleansers">Oil Cleansers</a>
+                        <a id="categoryFilter" href="#Cleansers">Cleansers </a>
+                        <a id="categoryFilter" href="#Toner">Toner</a>
+                        <a id="categoryFilter" href="#serums">Serums</a>
+                        <a id="categoryFilter" href="#">Moisturizers</a>
+                        <a id="categoryFilter" href="#">Sunscreen</a>
+                        <a id="categoryFilter" href="#">Cream & Gel Cream</a>
+                        <a id="categoryFilter" href="#lipoil">Lip Oil</a>
                     </div>
                 </li>
                 <li class="active">
@@ -87,107 +87,81 @@
                     <span class="count" id="cartCount">0</span>
                 </span>
             </ul>
+            
+           <div id="cartModal" class="cart-modal">
+                <div class="cart-content">
+                    <span class="close-cart" id="closeCartCross">&times;</span>
+                    
+                    <div class="cart-header">Your Cart</div>
+                    
+                    <div id="cartItems" class="cart-items">
+                        </div>
+                </div>
+            </div>
+
+            <div id="qrModal" class="qr-modal">
+                <div class="qr-content">
+                    <span class="close-btn" id="closeQrCross">&times;</span>
+                    <div class="qr-modal-inner">
+                        <h2 class="qr-title">Scan to Pay</h2>
+                        <img src="image/photo_2025-05-17_11-09-35.jpg" alt="ABA Pay" class="qr-code-image">
+                        
+                        <h3 id="qrTotal"></h3>
+                        
+                        <button id="backToCart" class="back-to-card">
+                            ← Back to Your Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main class="main-content mt-4" id="home">
-        <div id="cartModal" class="cart-modal">
-            <div class="cart-content">
-                <span class="close-cart" id="closeCartCross">&times;</span>
-                
-                <div class="cart-header">Your Cart</div>
-                
-                <div id="cartItems" class="cart-items">
-                    </div>
-            </div>
-        </div>
 
-        <div id="qrModal" class="qr-modal">
-            <div class="qr-content">
-                <div class="qr-modal-inner">
-                    <h2 class="qr-title">Scan to Pay</h2>
-                    <img src="image/photo_2025-05-17_11-09-35.jpg" alt="ABA Pay" class="qr-code-image">
-                    
-                    <h3 id="qrTotal"></h3>
-                    
-                    <button id="backToCart" class="back-to-card">
-                        ← Back to Your Cart
-                    </button>
-                </div>
-            </div>
-        </div>
-        <section class="hero-section">
-            <div class="hero-text" data-aos="fade-up" data-aos-duration="1500">
-                <h1>Unlock Your Skin's Natural Radiance</h1>
-                <p>Discover our curated collection of clean, effective skincare products.</p>
-                <a href="#shop-now" class="cta-button">Shop Now</a>
-            </div>
-            <div class="hero-image" data-aos="zoom-in" data-aos-duration="1500">
-                <img src="https://i.pinimg.com/originals/aa/b7/52/aab7523f5c40f75e20a2749e271f863c.jpg" alt="Skincare products">
-            </div>
-        </section>
-       <section class="skincare-section">
-            <h2 data-aos="fade-right">Population Products</h2>
+        <section id="team-section" class="team-container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="team-subtitle">ពួកយើងគឺជាក្រុមនិស្សិតដែលបានរួមគ្នាបង្កើតគម្រោង Darling Skincare  ដើម្បីផ្តល់បទពិសោធ៍ក្នុងការទិញទំនិញដ៏ល្អបំផុតក្នុង​​ Website</p>
             
-            <div id="population-grid" class="product-slider">
-                </div>
-        </section>
-
-        <section class="products-section" id="shop-now">
-            <h2 data-aos="fade-right">Featured Products</h2>
-            <div class="filter-container" data-aos="fade-up">
-                <div class="search-wrapper">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="productSearch" placeholder="ស្វែងរកផលិតផល... (Search products)">
-                </div>
-
-                <div class="filter-controls">
-                    <div class="select-wrapper">
-                        <i class="fas fa-filter"></i>
-                        <select id="categoryFilter">
-                            <option value="all">All Categories</option>
-                            <option value="serums">Serums</option>
-                            <option value="cleansers">Cleansers</option>
-                            <option value="Oil Cleansers">Oil Cleansers</option>
-                            <option value="moisturizers">Moisturizers</option>
-                            <option value="Sunscreen">Sunscreen</option>
-                            <option value="Toner">Toner</option>
-                            <option value="Cream & Gel Cream">Cream & Gel Cream</option>
-                            <option value="Lip Oil">Lip Oil</option>
-                        </select>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="profile-circle">
+                        <img src="/image/photo_2026-02-11_14-07-34.jpg" alt="Developer">
                     </div>
-
-                    <div class="select-wrapper">
-                        <i class="fas fa-sort-amount-down"></i>
-                        <select id="priceSort">
-                            <option value="default">រៀបតាម (Sort By)</option>
-                            <option value="low">តម្លៃ: ទាប ទៅ ខ្ពស់ (Price: Low to High)</option>
-                            <option value="high">តម្លៃ: ខ្ពស់ ទៅ ទាប (Price: High to Low)</option>
-                        </select>
+                    <h3>Moa Visal</h3>
+                    <p class="role">Team Leader & Full-stack Developer</p>
+                    <p class="desc">ទទួលបន្ទុកលើការរៀបចំ Database និងការសរសេរកូដ Backend...</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/itachi1920x1080" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/Lovealonesusususususususususu" target="_blank"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="product-grid" id="product-grid">
-                <!-- Product cards will be added here by JavaScript -->
-            </div>
-        </section>
-
-        <section id="about-section" class="about-container">
-            <div class="about-content">
-                <h2 class="section-title">Our Story</h2>
-                
-                <p class="intro-text">
-                    Welcome to <span class="highlight">Darling Skincare</span>. Founded in 2026, our mission is to unlock your skin's natural radiance through science-backed formulas and gentle ingredients.
-                </p>
-                
-                <p class="project-text">
-                    This platform was developed as a <span class="highlight">Team build project</span> to showcase a modern e-commerce experience, focusing on user-friendly navigation and secure digital payments.
-                </p>
-
-                <button class="dev-button"><a href="./AboutUs/team.html">Meet Our Developers</a></button>
-                
-                <div class="icon-footer">
-                    <!-- <img src="your-eye-icon.png" alt="icon" class="small-icon"> -->
+                <div class="team-card">
+                    <div class="profile-circle">
+                        <img src="/image/photo_2025-06-29_14-50-29.jpg" alt="Developer">
+                    </div>
+                    <h3>Mach Bunneng</h3>
+                    <p class="role">Team Leader & Full-stack Developer</p>
+                    <p class="desc">ទទួលបន្ទុកលើការរៀបចំ Database និងការសរសេរកូដ Backend...</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/bunnengmach090524-Lang?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/bunnengmach090524" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="profile-circle">
+                        <img src="/image/photo_2026-02-08_07-09-50.jpg" alt="Developer">
+                    </div>
+                    <h3>Prey Thanich</h3>
+                    <p class="role">Team Leader & Full-stack Developer</p>
+                    <p class="desc">ទទួលបន្ទុកលើការរៀបចំ Database និងការសរសេរកូដ Backend...</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/bunnengmach090524-Lang?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/bunnengmach090524" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -258,6 +232,6 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/scrpt.js"></script>
+    <script src="/js/scrpt.js"></script>
 </body>
 </html>

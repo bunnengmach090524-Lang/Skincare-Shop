@@ -175,7 +175,7 @@ a:hover {
 
 /* Title with gradient */
 .modal-title {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
   background: linear-gradient(to right, #a78bfa, #f472b6);
   -webkit-background-clip: text;
@@ -278,8 +278,9 @@ a:hover {
 }
 /* Cart Styling */
 .cart {
-    display: inline-flex; 
+    display: flex; 
     align-items: center; 
+    width: fit-content;
     gap: 8px; 
     padding: 8px 12px; 
     border-radius: 999px; 
@@ -529,20 +530,8 @@ a:hover {
 
     .cart-content > .close-cart {
         position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -90px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
-    }
+        left: 130px;
+    }   
 }
 @media (max-width: 992px) {
     .main-header {
@@ -712,19 +701,7 @@ a:hover {
     }
     .cart-content > .close-cart {
         position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -120px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
+        left: 140px;
     }
 }
 
@@ -896,19 +873,7 @@ a:hover {
     }
     .cart-content > .close-cart {
         position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -180px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
+        left: 140px;
     }
 }
 @media (max-width: 834px) {
@@ -1080,19 +1045,6 @@ a:hover {
         cursor: pointer;
         outline: none;
         color: #1a1a1a;
-    }
-
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -210px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
     }
 }
 
@@ -1433,22 +1385,6 @@ a:hover {
         outline: none;
         color: #1a1a1a;
     }
-    .cart-content > .close-cart {
-        position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -240px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
-    }
     .product-detail-container > .detail-image-section > img {
         width: 300px;
         height: 350px;
@@ -1625,19 +1561,7 @@ a:hover {
     }
     .cart-content > .close-cart {
         position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -280px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
+        left: 140px;
     }
     .product-detail-container > .detail-image-section > img {
         width: 300px;
@@ -1996,22 +1920,6 @@ a:hover {
         outline: none;
         color: #1a1a1a;
     }
-    .cart-content > .close-cart {
-        position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -320px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
-    }
     .product-detail-container > .detail-image-section > img {
         width: 270px;
         height: 350px;
@@ -2136,19 +2044,7 @@ a:hover {
 
     .cart-content > .close-cart {
         position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -345px;
-    }
-
-    .cart-content {
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
+        left: 140px;
     }
     .product-detail-container > .detail-image-section > img {
         width: 250px;
@@ -2171,6 +2067,14 @@ a:hover {
 }
 
 @media (max-width: 545px) {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #a78bfa, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.5;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -2313,29 +2217,17 @@ a:hover {
         margin-right: 15px;     
     }
 
-    .cart-content > .close-cart {
-        position: relative;
-        left: 430px;
-    }
-    /* This is the container box */
-    .cart-modal {
-        align-items: flex-start; /* Stop centering vertically */
-        padding-top: 440px;       /* Push the box down to clear the navbar */
-        margin-left: -364px;
-    }
-
-    .cart-content {
-        width: 280px;
-        margin-top: 20px;        /* Extra gap from the navbar area */
-        width: 95%;              /* Make it slightly wider on small screens */
-        max-height: 70vh;        /* Prevent it from being too long on mobile */
-    }
-    .modal-box {
-        width: 300px;
-    }
     
 }
 @media (max-width: 510px) {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #a78bfa, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.5;
+    }
     .main-header {
         padding: 15px 25px;
     }
@@ -2477,49 +2369,18 @@ a:hover {
         margin-left: auto; 
         margin-right: 15px;     
     }
-     .cart-modal {
-        align-items: flex-start !important; /* Stop centering vertically */
-        padding-top: 450px !important;       /* Push the box down to clear the navbar */
-        margin-left: -364px;
-    }
-
-    /* 2. Set the narrow width */
-    .cart-content {
-        width: 280px !important;           /* Fixed narrow width as requested */
-        max-width: 280px !important;
-        margin: 0 auto !important;         /* Keeps it centered horizontally */
-        padding: 15px !important;
-    }
-
-    /* 3. Scale down text and images to fit the 280px box */
-    .cart-header {
-        font-size: 22px !important;
-        margin-bottom: 15px;
-    }
-
-    .cart-item-name {
-        font-size: 14px;
-    }
-
-    .cart-item-price {
-        font-size: 13px;
-    }
-
-    .cart-item img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    /* Adjust the X button so it stays in the corner of the small box */
-    .close-cart {
-        font-size: 24px !important;
-        top: 10px !important;
-        right: 10px !important;
-    }
 
 }
 
 @media (max-width: 475px) {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #a78bfa, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.5;
+    }
     .modal-box {
         padding-top: 10px;
         margin-bottom: 200px;
@@ -2670,9 +2531,20 @@ a:hover {
         left: -20px;
         width: 270px;
     }
+    .cart-modal {
+        width: 350px !important;
+    }
 }
 
 @media (max-width: 450px) {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #a78bfa, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.5;
+    }
     .modal-box {
         margin-top: 40px;
         padding-top: 10px;
@@ -2817,48 +2689,17 @@ a:hover {
         margin-left: auto; 
         margin-right: 15px;     
     }
-    /* 1. Push it under the navbar */
-    .cart-modal {
-        align-items: flex-start !important; /* Forces it to the top */
-        padding-top: 450px !important;      /* Adjust this to your navbar height */
-    }
-
-    /* 2. Set the narrow width */
-    .cart-content {
-        width: 280px !important;           /* Fixed narrow width as requested */
-        max-width: 280px !important;
-        margin: 0 auto !important;         /* Keeps it centered horizontally */
-        padding: 15px !important;
-    }
-
-    /* 3. Scale down text and images to fit the 280px box */
-    .cart-header {
-        font-size: 22px !important;
-        margin-bottom: 15px;
-    }
-
-    .cart-item-name {
-        font-size: 14px;
-    }
-
-    .cart-item-price {
-        font-size: 13px;
-    }
-
-    .cart-item img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    /* Adjust the X button so it stays in the corner of the small box */
-    .close-cart {
-        font-size: 24px !important;
-        top: 10px !important;
-        right: 10px !important;
-    }
 }
 
 @media (max-width: 428px) {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #a78bfa, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+    }
     .modal-box {
         margin-top: 80px;
         /* pad */
@@ -3005,50 +2846,13 @@ a:hover {
         margin-left: auto; /* Push it to the right */
         margin-right: 15px; /* Space before the toggle button */
     }
-    /* 1. Push it under the navbar */
-    .cart-modal {
-        align-items: flex-start !important; /* Forces it to the top */
-        padding-top: 450px !important;      /* Adjust this to your navbar height */
-        margin-left: -420px;
-    }
-
-    /* 2. Set the narrow width */
-    .cart-content {
-        width: 280px !important;           /* Fixed narrow width as requested */
-        max-width: 280px !important;
-        margin: 0 auto !important;         /* Keeps it centered horizontally */
-        padding: 15px !important;
-    }
-
-    /* 3. Scale down text and images to fit the 280px box */
-    .cart-header {
-        font-size: 22px !important;
-        margin-bottom: 15px;
-    }
-
-    .cart-item-name {
-        font-size: 14px;
-    }
-
-    .cart-item-price {
-        font-size: 13px;
-    }
-
-    .cart-item img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    /* Adjust the X button so it stays in the corner of the small box */
-    .close-cart {
-        font-size: 24px !important;
-        top: 10px !important;
-        right: 10px !important;
-    }
     .modal-box {
         position: relative;
         left: -38px;
         width: 250px;
+    }
+    .cart-modal {
+        width: 350px !important;
     }
 }
 
@@ -3200,43 +3004,11 @@ a:hover {
     }
     /* 1. Push it under the navbar */
     .cart-modal {
-        align-items: flex-start !important; /* Forces it to the top */
-        padding-top: 450px !important;      /* Adjust this to your navbar height */
-        margin-left: -445px;
+        width: 300px !important;
     }
-
-    /* 2. Set the narrow width */
-    .cart-content {
-        width: 280px !important;           /* Fixed narrow width as requested */
-        max-width: 280px !important;
-        margin: 0 auto !important;         /* Keeps it centered horizontally */
-        padding: 15px !important;
-    }
-
-    /* 3. Scale down text and images to fit the 280px box */
-    .cart-header {
-        font-size: 22px !important;
-        margin-bottom: 15px;
-    }
-
-    .cart-item-name {
-        font-size: 14px;
-    }
-
-    .cart-item-price {
-        font-size: 13px;
-    }
-
-    .cart-item img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    /* Adjust the X button so it stays in the corner of the small box */
-    .close-cart {
-        font-size: 24px !important;
-        top: 10px !important;
-        right: 10px !important;
+    .cart-modal > .cart-content > .close-cart {
+        position: relative;
+        left: 110px;
     }
 }
 
@@ -3399,43 +3171,7 @@ a:hover {
     }
     /* 1. Push it under the navbar */
     .cart-modal {
-        align-items: flex-start !important; /* Forces it to the top */
-        padding-top: 450px !important;      /* Adjust this to your navbar height */
-        margin-left: -455px;
-    }
-
-    /* 2. Set the narrow width */
-    .cart-content {
-        width: 280px !important;           /* Fixed narrow width as requested */
-        max-width: 280px !important;
-        margin: 0 auto !important;         /* Keeps it centered horizontally */
-        padding: 15px !important;
-    }
-
-    /* 3. Scale down text and images to fit the 280px box */
-    .cart-header {
-        font-size: 22px !important;
-        margin-bottom: 15px;
-    }
-
-    .cart-item-name {
-        font-size: 14px;
-    }
-
-    .cart-item-price {
-        font-size: 13px;
-    }
-
-    .cart-item img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    /* Adjust the X button so it stays in the corner of the small box */
-    .close-cart {
-        font-size: 24px !important;
-        top: 10px !important;
-        right: 10px !important;
+        width: 280px !important;
     }
     .modal-box {
         position: relative;
@@ -3723,6 +3459,177 @@ h2 {
     --color-link-hover: #ffffff;
     --color-border: #444444;
 }
+/* about section */
+
+/* Add this to the very top of your CSS file */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some margin to account for your fixed header height */
+#about-section {
+    scroll-margin-top: 80px; 
+}
+.about-container {
+    padding: 80px 20px;
+    background-color: #b5888863;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Use your site's font */
+}
+
+.section-title {
+    color: #e5989b; /* Dusty pink from your logo */
+    font-size: 2.5rem;
+    font-family: 'Serif', serif; 
+    margin-bottom: 30px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text, .project-text {
+    color: #686464;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #800080; /* Purple color from your text */
+    font-weight: bold;
+}
+
+.dev-button {
+    background-color: #eab6b6; /* Lighter pink button */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all .4s ease-in-out;
+}
+
+.dev-button:hover {
+    background-color: #d27477;
+    transition: all .4s ease-in-out;
+    transform: scale(1.09);
+}
+
+.small-icon {
+    width: 40px;
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to drop to the next line on mobile */
+    justify-content: center;
+    gap: 30px;
+    /* margin-top: 40px; */
+}
+
+.team-card {
+    flex: 1 1 300px; /* Cards grow/shrink but try to stay around 300px */
+    max-width: 350px;
+    background: #885d5d;
+    border: 1px solid #e5989b;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+.team-container {
+    padding: 2px 50px 80px;
+    text-align: center;
+    background-color: #cf9393c0;
+}
+
+.team-title {
+    color: #e5989b;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes it responsive for mobile */
+    margin-top: 40px;
+}
+.team-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: auto;
+    box-shadow: 0 10px 20px rgb(123, 56, 56);
+}
+.team-card {
+    background: #c1a0a0;
+    border: 2px solid #f0e0e5;
+    border-radius: 20px;
+    padding: 30px;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+.team-card > .profile-circle img {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 3px rgb(92, 86, 86);
+}
+.team-card > .social-icons {
+    color: #444444;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.team-card > .social-icons a{
+    color: #444444;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.img-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #dcd0ff; /* Purple border from image */
+    object-fit: cover;
+}
+
+.role {
+    color: #8a2be2;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
 
 /* Base Footer Styling */
 .main-footer {
@@ -4000,150 +3907,106 @@ h2 {
     }
 }
 /* show product details to pay */
-/* Ensure modal is a Flexbox for centering */
-.cart-header {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 30px;
-    display: block;
-}
-
-/* THE CROSS (Close Button) */
-.close-cart {
-   position: absolute;
-    top: 15px;
-    right: 20px;       /* This forces it to the right */
-    font-size: 30px;
-    line-height: 1;
-    color: #ff0000;
-    cursor: pointer;
-    z-index: 10;/* Ensures it stays on top and clickable */
-}
-
-/* Fix Item Overlapping */
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-}
-.cart-item-info { display: flex; align-items: center; gap: 15px; }
-.cart-item img { width: 50px; height: 50px; border-radius: 5px; object-fit: cover; }
-.cart-item-name { font-weight: bold; display: block; }
-.remove-btn { background: none; border: none; color: #ff4d4d; font-size: 20px; cursor: pointer; }
-/* CSS for the Cart Modal */
 .cart-modal {
-    display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 390px;
-    top: 90px;
-    width: 500px;
-    height: 450px;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 100%; /* Take full width on small screens for a cleaner look */
+    max-width: 400px; 
+    height: 100vh;
+    background-color: #a82d71dc; /* Your pinkish theme color */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-in-out;
+    z-index: 9999;
+    display: block; /* Always block, controlled by right property */
+    transition: all .5s ease-in-out;
 }
 
+/* 2. When the drawer is toggled open */
 .cart-modal.visible {
-    display: flex; /* Show when 'visible' class is added */
+    right: 0; /* Slides into view */
+    transition: all .5s ease-in-out;
 }
 
+/* 3. The Inner Content Wrapper */
 .cart-content {
-    background-color: #a82d7191;
-    color: whitesmoke;
     padding: 20px;
-    border-radius: 14px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    position: relative;
-    padding-top: 40px;
-    max-height: 80vh;
-    overflow-y: auto;
-    font-weight: bold;
-}
-
-.cart-content h2 {
-    width: auto;          /* Remove the fixed 200px width */
-    display: block;       /* Change from flex if you just want centered text */
-    text-align: center;
-    margin: 0 auto 10px auto; /* Centers the block and adds bottom margin */
-    font-size: 1.8em;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
-}
-
-.cart-modal .close-btn {
-    float: right;
-    font-size: 60px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-}
-.close-btn:hover {
-    cursor: pointer;
-    color: rgb(255, 0, 0);
-}
-
-.cart-items {
-    margin-top: 20px;
-}
-
-.cart-item {
+    color: whitesmoke;
+    height: 100%;
     display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+    transition: all .5s ease-in-out;
 }
 
-.cart-item-image {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    border-radius: 4px;
-    overflow: hidden;
+/* 4. Heading Style */
+.cart-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.cart-item-image img {
+/* 5. The Close Button (The X) */
+.close-cart {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 2001;
+}
+
+.close-cart:hover {
+    color: #ff4d4d;
+    transform: scale(1.1);
+}
+
+/* 6. The Background Overlay */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    z-index: 9998;
+}
+
+.cart-overlay.active {
+    display: block; /* Shown when cart is open */
+    transition: all .5s ease-in-out;
+}
+
+/* 7. Cart Item Styling */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-.cart-item-details {
-    flex-grow: 1;
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff7675;
+    font-size: 24px;
+    cursor: pointer;
 }
-
-.cart-item-name {
-    margin: 0;
-    font-weight: bold;
-}
-
-.cart-item-price {
-    margin: 0;
-    color: whitesmoke;
-}
-
-.cart-summary {
-    border-top: 2px solid #ccc;
-    padding-top: 15px;
-    margin-top: 20px;
-}
-
-.summary-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.summary-line.total {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: whitesmoke;
-}
-
 .pay-now-btn {
     width: 100%;
     padding: 15px;
